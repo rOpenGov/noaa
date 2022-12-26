@@ -13,7 +13,7 @@ c <- b$results
 url <- "https://www.ncei.noaa.gov/cdo-web/api/v2/stations/GHCND:USW00013872"
 
 
-
+#TODO: Add date cleaner so all dates get formatted YYYY-MM-DD
 
 
 
