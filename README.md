@@ -22,5 +22,5 @@ Return weather data in standard units from the first of May 2010 through the fif
 
 ```
 get_weather_data("<token>", zip="28801", startdate="2010-05-01", 
-            enddate="2010-05-05", unit="standard")
+                 enddate="2010-05-05", unit="standard")
 ```
