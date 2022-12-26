@@ -1,4 +1,4 @@
-# histweatherdata: Accessing Weather Climate Data by NOAA
+# histweatherdata: Accessing Historic Weather Data by NOAA
 
 
 To use this 
