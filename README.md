@@ -6,14 +6,14 @@ To use this
 In two steps:
 
 
-### Getting an Authentication Token
+### Authentication Token
 
 Using Climate Data Online requires a token (which is like a unique signature that gives you access to the service).
 
 
 Get a token by going to [www.ncdc.noaa.gov/cdo-web/token](https://www.ncdc.noaa.gov/cdo-web/token) and entering your email address. A token will be sent immediately to the address.
 
-### Getting Historic Weather Data
+### Accessing Historic Weather Data
 
 
 #### Usage
