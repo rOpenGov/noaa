@@ -37,7 +37,7 @@ histweatherdata makes it easy to access historic weather data within the R envir
   </tr>
   <tr>
     <td>token</td>
-    <td>Unique token set up by user via [www.ncdc.noaa.gov/cdo-web/token](https://www.ncdc.noaa.gov/cdo-web/token)</td>
+    <td>Unique token set up by user via <a href="https://www.ncdc.noaa.gov/cdo-web/token">www.ncdc.noaa.gov/cdo-web/token</a></td>
   </tr>
   <tr>
     <td>zip</td>
@@ -51,6 +51,9 @@ histweatherdata makes it easy to access historic weather data within the R envir
     <td>First date to return data.</td>
   </tr>
 </table>
+
+
+
 
 get_weather_data(token = "RwxSOFeVk", 
                  zip = "28801", 
