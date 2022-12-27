@@ -12,13 +12,13 @@ Get a token by going to [www.ncdc.noaa.gov/cdo-web/token](https://www.ncdc.noaa.
 
 histweatherdata makes it easy to access historic weather data within the R environment. 
 
-`get_weather_data()` returns a dataframe with fields for: 
+`get_weather_data()` returns a dataframe describing weather phenomena. Fields are: 
 - **date** in year-month-day format
 - **datatype** for whether the corresponding value describes the temperature, amount of precipitation, snow, etc. (See below for a list of acronyms and their meanings)
 - **station** for the unique ID assigned to a station
 - **value** contains the numeric value for the corresponding datatype (e.g. temperature, amount of precipitation, and so forth).
 
-`get_station_data()` returns a dataframe with fields for:
+`get_station_data()` returns a dataframe describing station informaion. with fields for:
 - **elevation** 
 - **mindate**
 - **maxdate**
