@@ -29,7 +29,12 @@ histweatherdata makes it easy to access historic weather data within the R envir
 - **elevationUnit** metric? Standard?
 - **longitude**
 
-#### Usage
+#### Arguments
+
+| Name | Description |
+|----|----|
+
+|  |  |
 
 get_weather_data(token = "RwxSOFeVk", 
                  zip = "28801", 
