@@ -14,7 +14,7 @@ histweatherdata makes it easy to access historic weather data within the R envir
 
 `get_weather_data()` returns a dataframe with fields for: 
 - **date** in year-month-day format
-- **datatype** for whether the corresponding value describes the minimum and maximum temperature, the amount of precipitation, snow, etc. (See below for a list of acronyms and their meanings)
+- **datatype** for whether the corresponding value describes the temperature, amount of precipitation, snow, etc. (See below for a list of acronyms and their meanings)
 - **station** for the unique ID assigned to a station
 - **value** contains the numeric value for the corresponding datatype (e.g. temperature, amount of precipitation, and so forth).
 
