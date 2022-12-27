@@ -2,6 +2,22 @@
 
 National Oceanic and Atmospheric Administration (NOAA) maintains one of the largest climate data archives, the National Climatic Data Center (NCDC). NCDC's Climate Data Online (CDO) offers web services that provide access to this data, which include (but is not limited to) minimum and maximum temperature in different zip codes by date, ENTER. 
 
+
+### Install
+
+Install from CRAN:
+
+```
+install.packages("histweatherdata")
+```
+
+Install from GitHub:
+
+```
+require(devtools)
+install_github("stephbuon/histweatherdata")
+```
+
 ### Authentication Token
 
 Accessing CDO data requires a token (like a unique signature that lets you use the service).
