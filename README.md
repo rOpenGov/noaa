@@ -1,6 +1,8 @@
 # histweatherdata: Accessing Historic Weather Data by NOAA
 
-National Oceanic and Atmospheric Administration (NOAA) maintains one of the largest climate data archives, the National Climatic Data Center (NCDC). NCDC's Climate Data Online (CDO) offers web services that provide access to this data, which include (but is not limited to) minimum and maximum temperature in different zip codes by date, ENTER. 
+National Oceanic and Atmospheric Administration (NOAA) maintains one of the largest climate data archives, the National Climatic Data Center (NCDC). NCDC's Climate Data Online (CDO) offers web services that provide access to weather and climate data, which include (but is not limited to) minimum and maximum temperature in different zip codes by date, amount of precipitation, longitude and latitude of stations, and more. 
+
+It is the only known R package that enables the user to search historical weather data by zip code. 
 
 
 ### Install
@@ -22,7 +24,7 @@ install_github("stephbuon/histweatherdata")
 
 Accessing CDO data requires a token (like a unique signature that lets you use the service).
 
-Get a token by going to [www.ncdc.noaa.gov/cdo-web/token](https://www.ncdc.noaa.gov/cdo-web/token) and entering your email address. A token will be immediately sent. You can use the same token multiple times. 
+Get a token by going to [www.ncdc.noaa.gov/cdo-web/token](https://www.ncdc.noaa.gov/cdo-web/token) and entering your email address. A token will be immediately sent. You can reuse the same token multiple times. 
 
 ### Accessing Historic Weather Data
 
@@ -35,15 +37,15 @@ histweatherdata makes it easy to access historic weather data within the R envir
 - **value** contains the numeric value for the corresponding datatype (e.g. temperature, amount of precipitation, and so forth).
 
 `get_station_data()` returns a dataframe describing station informaion. with fields for:
-- **elevation** 
-- **mindate**
-- **maxdate**
-- **latitude**
-- **name** for the city, state, and country of the station
-- **datacoverage**
-- **id** for the unique ID assigned to a station
-- **elevationUnit** metric? Standard?
-- **longitude**
+- **elevation** the elevation of station
+- **mindate** earliest date on record
+- **maxdate** latest date on record
+- **latitude** the latitude of the station
+- **name** the city, state, and country of the station
+- **datacoverage** the date range for which data exists
+- **id** the unique ID assigned to a station
+- **elevationUnit** whether the elevation value is in standard or metric units
+- **longitude** the longitude of the station
 
 #### Arguments
 
@@ -113,14 +115,15 @@ get_station_data(token = "RwxSOFeVk")
 Pass a station ID for information on a specific station.
 
 ```
-get_station_data(token = "RwxSOFeVk", station_no = c("COOP:010008", "GHCND:USW00013872"))
+get_station_data(token = "RwxSOFeVk", station_no = "COOP:010008")
 ```
 
-#### Acronyms: 
+#### Acronyms 
 
 | Name | Description |
 |----|----|
 | TMIN | Minimum Temperature |
 | TMAX | Maximum Temperature |
 | PRCP | Precipitation |
+| SNOW | Snow |
 

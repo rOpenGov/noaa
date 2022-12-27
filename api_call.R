@@ -3,10 +3,6 @@ library(jsonlite)
 library(dplyr)
 library(stringr)
 
-
-# TODO: Add limit
-
-
 get_weather_data <- function(token, zip, startdate, enddate, units, limit=25) {
   if(!(str_detect(startdate, "[0-9]{4}-[0-9]{2}-[0-9]{2}") & str_detect(enddate, "[0-9]{4}-[0-9]{2}-[0-9]{2}"))) {
     stop("Dates must be in YYYY-MM-DD format.") }
@@ -29,6 +25,7 @@ get_weather_data <- function(token, zip, startdate, enddate, units, limit=25) {
 
   return(results) }
 
+# Global Historical Climatology Network
 
 
 get_station_data <- function(token, station_no, limit=25) {
@@ -41,11 +38,8 @@ get_station_data <- function(token, station_no, limit=25) {
 
   return(results) }
 
-
-#Default is 25. Max is 1,000
-
 get_weather_data(token = "RwxSOFeVkuTygQpilLiTXWYgtSueUOaf", zip = "28801", startdate = "2010-12-01",
-                 enddate = "2010-12-05", units = "standard", limit = "10")
+                 enddate = "2010-12-05", units = "standard", limit = "100")
 
 
 get_station_data(token = "RwxSOFeVkuTygQpilLiTXWYgtSueUOaf", station_no = "COOP:010008")
