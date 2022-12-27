@@ -36,8 +36,8 @@ histweatherdata makes it easy to access historic weather data within the R envir
     <td colspan="2">get_weather_data()</td>
   </tr>
   <tr>
-    <td><Name></td>
-    <td><Description></td>
+    <td>token</td>
+    <td> this is a test -- not sure why this doesnt totally work</td>
   </tr>
     <td>token</td>
     <td> this is a test -- not sure why this doesnt totally work</td>
