@@ -30,20 +30,17 @@ histweatherdata makes it easy to access historic weather data within the R envir
 - **longitude**
 
 #### Arguments
-| get_weather_data() |
-|----|
-| Name | Description |
-|----|----|
-| token | ENTER |
 
 <table>
   <tr>
-    <td>One</td>
-    <td>Two</td>
+    <td colspan="2">get_weather_data()</td>
   </tr>
   <tr>
-    <td colspan="2">Three</td>
+    <td><Name></td>
+    <td><Description></td>
   </tr>
+    <td>token</td>
+    <td></td>
 </table>
 
 get_weather_data(token = "RwxSOFeVk", 
