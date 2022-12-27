@@ -41,6 +41,10 @@ histweatherdata makes it easy to access historic weather data within the R envir
   </tr>
     <td>token</td>
     <td> this is a test -- not sure why this doesnt totally work</td>
+  <tr>
+    <td>token</td>
+    <td> this is a test -- not sure why this doesnt totally work</td>
+  </tr>
 </table>
 
 get_weather_data(token = "RwxSOFeVk", 
