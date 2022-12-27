@@ -33,7 +33,7 @@ histweatherdata makes it easy to access historic weather data within the R envir
 
 <table>
   <tr>
-    <td colspan="2"><code>get_weather_data()`</code></td>
+    <td colspan="2"><code>get_weather_data()</code></td>
   </tr>
   <tr>
     <td>token</td>
@@ -42,29 +42,42 @@ histweatherdata makes it easy to access historic weather data within the R envir
   <tr>
     <td>zip</td>
     <td>ENTER</td>
+  </tr>
   <tr>
     <td>startdate</td>
     <td>First date to return data.</td>
   </tr>
   <tr>
-    <td>startdate</td>
-    <td>First date to return data.</td>
+    <td>enddate</td>
+    <td>Last date to return data.</td>
+  </tr>
+  <tr>
+    <td>units</td>
+    <td>Choose between standard and metric</td>
+  </tr>
+  <tr>
+    <td>limit</td>
+    <td>Specify the number of results. Default is 25. Maximum is 1,000</td>
   </tr>
 </table>
 
-
-
-
-get_weather_data(token = "RwxSOFeVk", 
-                 zip = "28801", 
-                 startdate = "2010-12-01",
-                 enddate = "2010-12-05", 
-                 units = "standard", 
-                 limit = "10")
-
-get_station_data(token = "RwxSOFeVk", 
-                 station_no = "COOP:010008", 
-                 limit = "100")
+<table>
+  <tr>
+    <td colspan="2"><code>get_weather_data()</code></td>
+  </tr>
+  <tr>
+    <td>token</td>
+    <td>Unique token from <a href="https://www.ncdc.noaa.gov/cdo-web/token">www.ncdc.noaa.gov/cdo-web/token</a></td>
+  </tr>
+  <tr>
+    <td>station_no</td>
+    <td>Unique ID assigned to a station</td>
+  </tr>
+  <tr>
+    <td>limit</td>
+    <td>Specify the number of results. Default is 25. Maximum is 1,000</td>
+  </tr>
+</table>
 
 #### Examples
 
