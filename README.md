@@ -30,11 +30,10 @@ histweatherdata makes it easy to access historic weather data within the R envir
 - **longitude**
 
 #### Arguments
-
+| get_weather_data() |
 | Name | Description |
 |----|----|
-
-|  |  |
+| token | ENTER |
 
 get_weather_data(token = "RwxSOFeVk", 
                  zip = "28801", 
