@@ -1,6 +1,6 @@
 # histweatherdata: Accessing Historic Weather Data by NOAA
 
-National Oceanic and Atmospheric Administration (NOAA) maintains one of the largest climate data archives, the National Climatic Data Center (NCDC). NCDC's Climate Data Online (CDO) offers web services that provide access to weather and climate data, which include (but is not limited to) minimum and maximum temperature in different zip codes by date, amount of precipitation, longitude and latitude of stations, and more. 
+National Oceanic and Atmospheric Administration (NOAA) maintains one of the largest climate data archives, the National Climatic Data Center (NCDC). NCDC's [Climate Data Online](https://www.ncdc.noaa.gov/cdo-web/webservices/v2#stations) (CDO) offers web services that provide access to weather and climate data, which include (but is not limited to) minimum and maximum temperature in different zip codes by date, amount of precipitation, longitude and latitude of stations, and more. 
 
 It is the only known R package that enables the user to search historical weather data by zip code. 
 
@@ -126,4 +126,8 @@ get_station_data(token = "RwxSOFeVk", station_no = "COOP:010008")
 | TMAX | Maximum Temperature |
 | PRCP | Precipitation |
 | SNOW | Snow |
+
+A full list of acronyms can 
+
+https://www1.ncdc.noaa.gov/pub/data/ghcn/daily/readme.txt
 
