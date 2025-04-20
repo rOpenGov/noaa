@@ -80,6 +80,57 @@ df <- get_climate_data(
 ```
 
 
+## `get_locationid()`
+
+The `get_locationid()` function retrieves location identifiers from the NOAA Climate Data Online (CDO) API based on a specified category. It supports pagination to return large sets of location data.
+
+### 📦 Function Overview
+
+```r
+get_locationid(noaa_token, category_id, n_results = Inf)
+```
+
+### ✅ Arguments
+
+| Argument       | Type       | Description |
+|----------------|------------|-------------|
+| `noaa_token`   | `string`   | NOAA API token used for authentication. |
+| `category_id`  | `string`   | The location category identifier. Must be one of the valid location categories (see below). |
+| `n_results`    | `numeric`  | Maximum number of results to retrieve. Defaults to `Inf` to fetch all available records. |
+
+### 📚 Supported Location Category IDs
+
+The function supports the following location categories:
+
+- `ST` – U.S. States and territories (e.g., `"ST:TX"` for Texas)  
+- `CITY` – Major U.S. cities with weather stations  
+- `COUNTY` – U.S. counties (e.g., `"COUNTY:US36061"` for New York County, NY)  
+- `ZIP` – ZIP Code areas  
+- `CLIM_REG` – NOAA-defined climate regions (e.g., Southeast, Midwest)  
+- `HYDROL_REG` – Hydrologic regions used for water resource planning  
+- `FIPS` – Federal Information Processing Standards codes (e.g., `"FIPS:37"` for North Carolina)
+
+### 📤 Example
+
+```r
+# Example: Retrieve a list of U.S. states
+df <- get_locationid(
+  noaa_token = "YOUR_API_KEY",
+  category_id = "ST",
+  n_results = 100
+)
+```
+
+### 🔄 Pagination
+
+The function automatically paginates API requests and aggregates results up to `n_results`.
+
+### 📎 Returns
+
+A data frame containing location metadata from the specified category. If no results are returned or the request fails, an error is thrown or an empty data frame is returned.
+
+
+
 
 A full list of acronyms here: 
 
