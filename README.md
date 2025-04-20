@@ -1,5 +1,9 @@
 # noaa: Accessing Current and Historic Weather Data by NOAA
 
+[![](https://cranlogs.r-pkg.org/badges/noaa)](https://cran.r-project.org/package=noaa)
+[![](https://cranlogs.r-pkg.org/badges/grand-total/noaa)](https://cran.r-project.org/package=noaa)
+[![](https://www.r-pkg.org/badges/version/noaa)](https://CRAN.R-project.org/package=noaa)
+
 National Oceanic and Atmospheric Administration (NOAA) maintains one of the largest climate data archives, the National Climatic Data Center (NCDC). NCDC's [Climate Data Online](https://www.ncdc.noaa.gov/cdo-web/webservices/v2#stations) (CDO) offers web services that provide access to weather and climate data, which include (but is not limited to) minimum and maximum temperature in different zip codes by date, amount of precipitation, longitude and latitude of stations, and more. 
 
 It is the only known R package that enables the user to search historical weather data by zip code. 
