@@ -12,11 +12,14 @@ Install from CRAN:
 install.packages("noaa")
 ```
 
-Install from GitHub:
+Install from rOpenGov:
 
 ```
-require(devtools)
-install_github("stephbuon/noaa")
+options(repos = c(
+    ropengov = 'https://ropengov.r-universe.dev',
+    CRAN = 'https://cloud.r-project.org'))
+
+install.packages('noaa')
 ```
 
 ### Authentication Token
