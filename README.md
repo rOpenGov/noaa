@@ -16,10 +16,10 @@ Install from rOpenGov:
 
 ```
 options(repos = c(
-    ropengov = 'https://ropengov.r-universe.dev',
-    CRAN = 'https://cloud.r-project.org'))
+    ropengov = "https://ropengov.r-universe.dev",
+    CRAN = "https://cloud.r-project.org"))
 
-install.packages('noaa')
+install.packages("noaa")
 ```
 
 ### Authentication Token
