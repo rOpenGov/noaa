@@ -84,13 +84,13 @@ df <- get_climate_data(
 
 The `get_locationid()` function retrieves location identifiers from the NOAA Climate Data Online (CDO) API based on a specified category. It supports pagination to return large sets of location data.
 
-### 📦 Function Overview
+### Function Overview
 
 ```r
 get_locationid(noaa_token, category_id, n_results = Inf)
 ```
 
-### ✅ Arguments
+### Arguments
 
 | Argument       | Type       | Description |
 |----------------|------------|-------------|
@@ -98,7 +98,7 @@ get_locationid(noaa_token, category_id, n_results = Inf)
 | `category_id`  | `string`   | The location category identifier. Must be one of the valid location categories (see below). |
 | `n_results`    | `numeric`  | Maximum number of results to retrieve. Defaults to `Inf` to fetch all available records. |
 
-### 📚 Supported Location Category IDs
+### Supported Location Category IDs
 
 The function supports the following location categories:
 
@@ -110,7 +110,7 @@ The function supports the following location categories:
 - `HYDROL_REG` – Hydrologic regions used for water resource planning  
 - `FIPS` – Federal Information Processing Standards codes (e.g., `"FIPS:37"` for North Carolina)
 
-### 📤 Example
+### Example
 
 ```r
 # Example: Retrieve a list of U.S. states
@@ -121,11 +121,7 @@ df <- get_locationid(
 )
 ```
 
-### 🔄 Pagination
-
-The function automatically paginates API requests and aggregates results up to `n_results`.
-
-### 📎 Returns
+### Returns
 
 A data frame containing location metadata from the specified category. If no results are returned or the request fails, an error is thrown or an empty data frame is returned.
 
@@ -133,13 +129,13 @@ A data frame containing location metadata from the specified category. If no res
 
 The `get_stationid()` function retrieves weather station metadata from the NOAA Climate Data Online (CDO) API for a given dataset and time range. It supports pagination and can return a large number of station records.
 
-### 📦 Function Overview
+### Function Overview
 
 ```r
 get_stationid(noaa_token, datasetid, locationid = NULL, startdate, enddate, n_results = Inf)
 ```
 
-### ✅ Arguments
+### Arguments
 
 | Argument       | Type       | Description |
 |----------------|------------|-------------|
@@ -150,7 +146,7 @@ get_stationid(noaa_token, datasetid, locationid = NULL, startdate, enddate, n_re
 | `enddate`      | `string`   | End date in `"YYYY-MM-DD"` format. |
 | `n_results`    | `numeric`  | Maximum number of station records to retrieve. Defaults to `Inf` to fetch all. |
 
-### 📤 Example
+### Example
 
 ```r
 # Example: Get stations in Texas for the GHCND dataset during 2020
@@ -164,17 +160,10 @@ df <- get_stationid(
 )
 ```
 
-### 🔄 Pagination
-
-The function automatically paginates through results and aggregates them into a single data frame, returning up to `n_results`.
-
-### 📎 Returns
+### Returns
 
 A data frame containing weather station metadata, such as station IDs, names, geographic coordinates, and available coverage. If no results are returned or the request fails, an error is thrown or an empty data frame is returned.
 
 
 
-A full list of acronyms here: 
-
-https://www1.ncdc.noaa.gov/pub/data/ghcn/daily/readme.txt
-
+A detailed list of NOAA acronyms can be found here: https://www1.ncdc.noaa.gov/pub/data/ghcn/daily/readme.txt
