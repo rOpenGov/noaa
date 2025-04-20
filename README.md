@@ -129,6 +129,48 @@ The function automatically paginates API requests and aggregates results up to `
 
 A data frame containing location metadata from the specified category. If no results are returned or the request fails, an error is thrown or an empty data frame is returned.
 
+## `get_stationid()`
+
+The `get_stationid()` function retrieves weather station metadata from the NOAA Climate Data Online (CDO) API for a given dataset and time range. It supports pagination and can return a large number of station records.
+
+### 📦 Function Overview
+
+```r
+get_stationid(noaa_token, datasetid, locationid = NULL, startdate, enddate, n_results = Inf)
+```
+
+### ✅ Arguments
+
+| Argument       | Type       | Description |
+|----------------|------------|-------------|
+| `noaa_token`   | `string`   | NOAA API token used for authentication. |
+| `datasetid`    | `string`   | The dataset identifier. Must be one of the valid dataset IDs (see list used by `valid_ids()`). |
+| `locationid`   | `string` or `NULL` | Optional location identifier to filter stations geographically (e.g., `"FIPS:48"` for Texas). |
+| `startdate`    | `string`   | Start date in `"YYYY-MM-DD"` format. |
+| `enddate`      | `string`   | End date in `"YYYY-MM-DD"` format. |
+| `n_results`    | `numeric`  | Maximum number of station records to retrieve. Defaults to `Inf` to fetch all. |
+
+### 📤 Example
+
+```r
+# Example: Get stations in Texas for the GHCND dataset during 2020
+df <- get_stationid(
+  noaa_token = "YOUR_API_KEY",
+  datasetid = "GHCND",
+  locationid = "FIPS:48",
+  startdate = "2020-01-01",
+  enddate = "2020-12-31",
+  n_results = 1000
+)
+```
+
+### 🔄 Pagination
+
+The function automatically paginates through results and aggregates them into a single data frame, returning up to `n_results`.
+
+### 📎 Returns
+
+A data frame containing weather station metadata, such as station IDs, names, geographic coordinates, and available coverage. If no results are returned or the request fails, an error is thrown or an empty data frame is returned.
 
 
 
