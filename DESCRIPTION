@@ -1,14 +1,16 @@
 Package: noaa
-Title: NOAA Climate Data Tools
-Version: 0.1.0
-Authors@R: person("Steph", "Buongiorno", 
-                  email = "steph.buon@proton.me", 
+Title: Climate Data Tools
+Version: 1.0.0
+Authors@R: person("Steph", "Buongiorno",
+                  email = "steph.buon@proton.me",
                   role = c("aut", "cre"))
+Author: Steph Buongiorno [aut, cre]
+Maintainer: Steph Buongiorno <steph.buon@proton.me>
 Description: Tools for querying and processing NOAA CDO climate data.
 License: GPL-3
 Encoding: UTF-8
-LazyData: true
 Imports:
     httr,
     jsonlite
 RoxygenNote: 7.3.2
+

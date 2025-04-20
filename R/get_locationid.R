@@ -9,6 +9,16 @@
 #'
 #' @return A data frame of location IDs matching the given category.
 #'
+#' @examples
+#' \dontrun{
+#'   # Retrieve token from environment variable
+#'   noaa_token <- Sys.getenv("NOAA_TOKEN")
+#'
+#'   # Get all U.S. state-level location IDs using category "FIPS"
+#'   locations <- get_locationid(noaa_token = noaa_token, category_id = "FIPS")
+#'   head(locations)
+#' }
+#'
 #' @importFrom httr GET add_headers status_code content
 #' @importFrom jsonlite fromJSON
 #' @export

@@ -13,6 +13,22 @@
 #'
 #' @return A data frame of climate data observations returned by the NOAA API.
 #'
+#' @examples
+#' \dontrun{
+#'   # Set your NOAA token as an environment variable
+#'   noaa_token <- Sys.getenv("NOAA_TOKEN")
+#'
+#'   # Example request: Daily summaries from Central Park, NY (GHCND:USW00094728)
+#'   data <- get_climate_data(
+#'     noaa_token = noaa_token,
+#'     datasetid = "GHCND",
+#'     stationid = "USW00094728",
+#'     startdate = "2020-01-01",
+#'     enddate = "2020-01-31"
+#'   )
+#'   head(data)
+#' }
+#'
 #' @importFrom httr GET add_headers status_code content http_status
 #' @importFrom jsonlite fromJSON
 #' @export

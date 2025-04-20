@@ -20,3 +20,14 @@ A data frame of location IDs matching the given category.
 Queries the NOAA Climate Data Online (CDO) API to retrieve location identifiers
 for a specified category (e.g., state, city, county).
 }
+\examples{
+\dontrun{
+  # Retrieve token from environment variable
+  noaa_token <- Sys.getenv("NOAA_TOKEN")
+
+  # Get all U.S. state-level location IDs using category "FIPS"
+  locations <- get_locationid(noaa_token = noaa_token, category_id = "FIPS")
+  head(locations)
+}
+
+}

@@ -36,3 +36,20 @@ A data frame of climate data observations returned by the NOAA API.
 Queries the NOAA Climate Data Online (CDO) API to retrieve climate data for a given dataset,
 station or location, and date range. Supports automatic pagination to collect large datasets.
 }
+\examples{
+\dontrun{
+  # Set your NOAA token as an environment variable
+  noaa_token <- Sys.getenv("NOAA_TOKEN")
+
+  # Example request: Daily summaries from Central Park, NY (GHCND:USW00094728)
+  data <- get_climate_data(
+    noaa_token = noaa_token,
+    datasetid = "GHCND",
+    stationid = "USW00094728",
+    startdate = "2020-01-01",
+    enddate = "2020-01-31"
+  )
+  head(data)
+}
+
+}

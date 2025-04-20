@@ -12,6 +12,22 @@
 #'
 #' @return A data frame containing metadata for the matching NOAA stations.
 #'
+#' @examples
+#' \dontrun{
+#'   # Retrieve your NOAA API token from environment
+#'   noaa_token <- Sys.getenv("NOAA_TOKEN")
+#'
+#'   # Get stations for the GHCND dataset in Texas between 2020-01-01 and 2020-12-31
+#'   stations <- get_stationid(
+#'     noaa_token = noaa_token,
+#'     datasetid = "GHCND",
+#'     locationid = "FIPS:48",
+#'     startdate = "2020-01-01",
+#'     enddate = "2020-12-31"
+#'   )
+#'   head(stations)
+#' }
+#'
 #' @importFrom httr GET add_headers status_code content
 #' @importFrom jsonlite fromJSON
 #' @export
