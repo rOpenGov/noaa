@@ -4,7 +4,6 @@ National Oceanic and Atmospheric Administration (NOAA) maintains one of the larg
 
 It is the only known R package that enables the user to search historical weather data by zip code. 
 
-
 ### Install
 
 Install from CRAN:
@@ -22,112 +21,67 @@ install_github("stephbuon/noaa")
 
 ### Authentication Token
 
-Accessing CDO data requires a token (like a unique signature that lets you use the service).
+Accessing CDO data requires a token. 
 
-Get a token by going to [www.ncdc.noaa.gov/cdo-web/token](https://www.ncdc.noaa.gov/cdo-web/token) and entering your email address. A token will be immediately sent. You can reuse the same token multiple times. 
+Get a token by going to [www.ncdc.noaa.gov/cdo-web/token](https://www.ncdc.noaa.gov/cdo-web/token) and entering your email address.
 
-### Accessing Historic Weather Data
 
-histweatherdata makes it easy to access historic weather data within the R environment. 
+## `get_climate_data()`
 
-`get_weather_data()` returns a dataframe describing weather phenomena. Fields are: 
-- **date** in year-month-day format
-- **datatype** for whether the corresponding value describes the temperature, amount of precipitation, snow, etc. (See below for a list of acronyms and their meanings)
-- **station** for the unique ID assigned to a station
-- **value** contains the numeric value for the corresponding datatype (e.g. temperature, amount of precipitation, and so forth).
+The `get_climate_data()` function allows you to retrieve climate and weather data from the [NOAA Climate Data Online (CDO) API](https://www.ncdc.noaa.gov/cdo-web/webservices/v2#gettingStarted) for a wide range of dataset types. It supports pagination and can retrieve large numbers of records by iteratively querying the API.
 
-`get_station_data()` returns a dataframe describing station informaion. with fields for:
-- **elevation** the elevation of station
-- **mindate** earliest date on record
-- **maxdate** latest date on record
-- **latitude** the latitude of the station
-- **name** the city, state, and country of the station
-- **datacoverage** the date range for which data exists
-- **id** the unique ID assigned to a station
-- **elevationUnit** whether the elevation value is in standard or metric units
-- **longitude** the longitude of the station
+### Function Overview
 
-#### Arguments
-
-<table>
-  <tr>
-    <td colspan="2"><code>get_weather_data()</code></td>
-  </tr>
-  <tr>
-    <td>token</td>
-    <td>Unique token from <a href="https://www.ncdc.noaa.gov/cdo-web/token">www.ncdc.noaa.gov/cdo-web/token</a></td>
-  </tr>
-  <tr>
-    <td>zip</td>
-    <td>Zip code</td>
-  </tr>
-  <tr>
-    <td>startdate</td>
-    <td>First date to return data</td>
-  </tr>
-  <tr>
-    <td>enddate</td>
-    <td>Last date to return data</td>
-  </tr>
-  <tr>
-    <td>units</td>
-    <td>Choose between standard and metric</td>
-  </tr>
-  <tr>
-    <td>limit</td>
-    <td>Specify the number of results. Default is 25. Maximum is 1,000</td>
-  </tr>
-</table>
-
-<table>
-  <tr>
-    <td colspan="2"><code>get_weather_data()</code></td>
-  </tr>
-  <tr>
-    <td>token</td>
-    <td>Unique token from <a href="https://www.ncdc.noaa.gov/cdo-web/token">www.ncdc.noaa.gov/cdo-web/token</a></td>
-  </tr>
-  <tr>
-    <td>station_no</td>
-    <td>Unique ID assigned to a station</td>
-  </tr>
-  <tr>
-    <td>limit</td>
-    <td>Specify the number of results. Default is 25. Maximum is 1,000</td>
-  </tr>
-</table>
-
-#### Examples
-
-Return weather data for zip code 28801 in standard units from the first of May 2010 through the fifth of May 2010. 
-
-```
-get_weather_data(token = "RwxSOFeVk", zip = "28801", startdate = "2010-12-01",
-                 enddate = "2010-12-05", units = "standard")
+```r
+get_climate_data(noaa_token, datasetid, stationid = NULL, locationid = NULL, startdate, enddate, n_results = Inf)
 ```
 
-Return station data. Supply the token with no other arguments to return all stations.
+### Arguments
 
+| Argument       | Type       | Description |
+|----------------|------------|-------------|
+| `noaa_token`   | `string`   | Your NOAA API token, available by registering at [NOAA CDO](https://www.ncdc.noaa.gov/cdo-web/token). |
+| `datasetid`    | `string`   | The dataset identifier. Must be one of the valid NOAA dataset IDs (see below). |
+| `stationid`    | `string` or `NULL` | The station ID (e.g., `"USW00094728"`). Required for station-based datasets. |
+| `locationid`   | `string` or `NULL` | The location ID (e.g., `"FIPS:48"` for Texas). Required for location-based datasets. |
+| `startdate`    | `string`   | Start date for the query in `"YYYY-MM-DD"` format. |
+| `enddate`      | `string`   | End date for the query in `"YYYY-MM-DD"` format. |
+| `n_results`    | `numeric`  | Maximum number of results to return. Use `Inf` (default) to fetch all available records. |
+
+### Supported Dataset IDs
+
+The function currently supports the following datasets:
+
+- `GHCND` – Daily summaries  
+- `GSOM` – Monthly summaries  
+- `GSOY` – Yearly summaries  
+- `NEXRAD2`, `NEXRAD3` – Radar data  
+- `NORMAL_DLY`, `NORMAL_MLY`, `ANN`, `ANNUAL` – Climate normals  
+- `PRECIP_15`, `PRECIP_HLY` – Precipitation data  
+- `ISD` – Integrated Surface Data  
+- `CLIMDIV` – Climate division data  
+- `CPC` – Climate Prediction Center data  
+- `LCD` – Local Climatological Data  
+- `AGRMET` – Agricultural Meteorological data  
+- `STORM_EVENTS` – Storm event data  
+
+### Example
+
+```r
+# Example: Get daily precipitation for Central Park, NY in January 2020
+df <- get_climate_data(
+  noaa_token = "YOUR_API_KEY",
+  datasetid = "GHCND",
+  stationid = "USW00094728",
+  startdate = "2020-01-01",
+  enddate = "2020-01-31",
+  n_results = 1000
+)
 ```
-get_station_data(token = "RwxSOFeVk")
-```
 
-Pass a station ID for information on a specific station.
 
-```
-get_station_data(token = "RwxSOFeVk", station_no = "COOP:010008")
-```
 
-#### Acronyms 
-
-| Name | Description |
-|----|----|
-| TMIN | Minimum Temperature |
-| TMAX | Maximum Temperature |
-| PRCP | Precipitation |
-| SNOW | Snow |
-
-A full list of acronyms can 
+A full list of acronyms here: 
 
 https://www1.ncdc.noaa.gov/pub/data/ghcn/daily/readme.txt
 
