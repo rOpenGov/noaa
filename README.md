@@ -10,14 +10,14 @@ It is the only known R package that enables the user to search historical weathe
 Install from CRAN:
 
 ```
-install.packages("histweatherdata")
+install.packages("noaa")
 ```
 
 Install from GitHub:
 
 ```
 require(devtools)
-install_github("stephbuon/histweatherdata")
+install_github("stephbuon/noaa")
 ```
 
 ### Authentication Token
