@@ -10,7 +10,7 @@
 #' @return A data frame of location IDs matching the given category.
 #'
 #' @examples
-#' \dontrun{
+#' if (nzchar(Sys.getenv("NOAA_TOKEN"))) {
 #'   # Retrieve token from environment variable
 #'   noaa_token <- Sys.getenv("NOAA_TOKEN")
 #'

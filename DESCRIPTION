@@ -1,16 +1,17 @@
 Package: noaa
-Title: Climate Data Tools
+Title: For accessing National Oceanic and Atmospheric Administration Climate Data Online (NOAA CDO)
 Version: 1.0.0
 Authors@R: person("Steph", "Buongiorno",
                   email = "steph.buon@proton.me",
                   role = c("aut", "cre"))
 Author: Steph Buongiorno [aut, cre]
 Maintainer: Steph Buongiorno <steph.buon@proton.me>
-Description: Tools for querying and processing NOAA CDO climate data.
+Description: Fetch data from the National Oceanic and Atmospheric Administration Climate Data Online (NOAA CDO) <https://www.ncdc.noaa.gov/cdo-web/webservices/v2> API. Optional parameters allow users to specify the number of results and whether these results. Data is returned in a dataframe.
 License: GPL-3
 Encoding: UTF-8
 Imports:
     httr,
     jsonlite
 RoxygenNote: 7.3.2
+
 

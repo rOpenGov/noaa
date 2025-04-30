@@ -34,7 +34,7 @@ Queries the NOAA Climate Data Online (CDO) API to retrieve station identifiers
 associated with a specified dataset, location, and date range.
 }
 \examples{
-\dontrun{
+if (nzchar(Sys.getenv("NOAA_TOKEN"))) {
   # Retrieve your NOAA API token from environment
   noaa_token <- Sys.getenv("NOAA_TOKEN")
 

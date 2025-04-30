@@ -14,8 +14,8 @@
 #' @return A data frame of climate data observations returned by the NOAA API.
 #'
 #' @examples
-#' \dontrun{
-#'   # Set your NOAA token as an environment variable
+#' if (nzchar(Sys.getenv("NOAA_TOKEN"))) {
+#'   # Set your NOAA token
 #'   noaa_token <- Sys.getenv("NOAA_TOKEN")
 #'
 #'   # Example request: Daily summaries from Central Park, NY (GHCND:USW00094728)

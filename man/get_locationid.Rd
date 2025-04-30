@@ -21,7 +21,7 @@ Queries the NOAA Climate Data Online (CDO) API to retrieve location identifiers
 for a specified category (e.g., state, city, county).
 }
 \examples{
-\dontrun{
+if (nzchar(Sys.getenv("NOAA_TOKEN"))) {
   # Retrieve token from environment variable
   noaa_token <- Sys.getenv("NOAA_TOKEN")
 

@@ -37,8 +37,8 @@ Queries the NOAA Climate Data Online (CDO) API to retrieve climate data for a gi
 station or location, and date range. Supports automatic pagination to collect large datasets.
 }
 \examples{
-\dontrun{
-  # Set your NOAA token as an environment variable
+if (nzchar(Sys.getenv("NOAA_TOKEN"))) {
+  # Set your NOAA token
   noaa_token <- Sys.getenv("NOAA_TOKEN")
 
   # Example request: Daily summaries from Central Park, NY (GHCND:USW00094728)

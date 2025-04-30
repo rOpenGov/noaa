@@ -13,7 +13,7 @@
 #' @return A data frame containing metadata for the matching NOAA stations.
 #'
 #' @examples
-#' \dontrun{
+#' if (nzchar(Sys.getenv("NOAA_TOKEN"))) {
 #'   # Retrieve your NOAA API token from environment
 #'   noaa_token <- Sys.getenv("NOAA_TOKEN")
 #'
