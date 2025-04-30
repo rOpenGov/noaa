@@ -1,5 +1,5 @@
 Package: noaa
-Title: For accessing National Oceanic and Atmospheric Administration Climate Data Online (NOAA CDO)
+Title: For Accessing National Oceanic and Atmospheric Administration Climate Data Online (NOAA CDO)
 Version: 1.0.0
 Authors@R: person("Steph", "Buongiorno",
                   email = "steph.buon@proton.me",
