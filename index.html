@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Accessing NOAA Climate Data Online • noaa</title>
+<title>Access National Aeronautics and Space Administration (NASA) Open APIs for Space and Earth Data • nasa</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
 <link rel="icon" type="”image/svg+xml”" href="favicon.svg">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -16,10 +16,10 @@
 <link href="deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
-<script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Accessing NOAA Climate Data Online">
-<meta name="description" content="Fetch data from the National Oceanic and Atmospheric Administration Climate Data Online (NOAA CDO) &lt;https://www.ncdc.noaa.gov/cdo-web/webservices/v2&gt; API including daily, monthly, and yearly climate summaries, radar data, climatological averages, precipitation data, annual summaries, storm events, and agricultural meteorology.">
-<meta property="og:description" content="Fetch data from the National Oceanic and Atmospheric Administration Climate Data Online (NOAA CDO) &lt;https://www.ncdc.noaa.gov/cdo-web/webservices/v2&gt; API including daily, monthly, and yearly climate summaries, radar data, climatological averages, precipitation data, annual summaries, storm events, and agricultural meteorology.">
-<meta property="og:image" content="https://ropengov.github.io/noaa/logo.png">
+<script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Access National Aeronautics and Space Administration (NASA) Open APIs for Space and Earth Data">
+<meta name="description" content="Provides functions to access and download data from various NASA APIs, including: Astronomy Picture of the Day (APOD), Mars Rover Photos, Earth Polychromatic Imaging Camera (EPIC), Near Earth Object Web Service (NeoWs), Earth Observatory Natural Event Tracker (EONET), and NASA Earthdata CMR Search. Most endpoints require a NASA API key for access. Data is retrieved, cleaned for analysis, and returned in a dataframe-friendly format.">
+<meta property="og:description" content="Provides functions to access and download data from various NASA APIs, including: Astronomy Picture of the Day (APOD), Mars Rover Photos, Earth Polychromatic Imaging Camera (EPIC), Near Earth Object Web Service (NeoWs), Earth Observatory Natural Event Tracker (EONET), and NASA Earthdata CMR Search. Most endpoints require a NASA API key for access. Data is retrieved, cleaned for analysis, and returned in a dataframe-friendly format.">
+<meta property="og:image" content="https://ropengov.github.io/nasa/logo.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:creator" content="@rOpenGov">
 <meta name="twitter:site" content="@rOpenGov">
@@ -34,7 +34,7 @@
 
     <nav class="navbar navbar-expand-lg fixed-top bg-dark" data-bs-theme="dark" aria-label="Site navigation"><div class="container">
 
-    <a class="navbar-brand me-2" href="index.html">noaa</a>
+    <a class="navbar-brand me-2" href="index.html">nasa</a>
 
     <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.0</small>
 
@@ -51,7 +51,7 @@
 <li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="search.json">
 </form></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/rOpenGov/noaa/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/rOpenGov/nasa/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul>
 </div>
 
@@ -384,8 +384,8 @@
   </main><aside class="col-md-3"><div class="links">
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/rOpenGov/noaa/" class="external-link">Browse source code</a></li>
-<li><a href="https://github.com/rOpenGov/noaa/issues" class="external-link">Report a bug</a></li>
+<li><a href="https://github.com/rOpenGov/nasa/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/rOpenGov/nasa/issues" class="external-link">Report a bug</a></li>
 <li><a href="https://ropengov.org/" class="external-link">Part of <img src="https://raw.githubusercontent.com/rOpenGov/homepage/master/static/images/logo2020_black_orange.svg" height="20" class="d-inline-block mx-1 rog-logo"></a></li>
 </ul>
 </div>
@@ -402,7 +402,7 @@
 <div class="citation">
 <h2 data-toc-skip>Citation</h2>
 <ul class="list-unstyled">
-<li><a href="authors.html#citation">Citing noaa</a></li>
+<li><a href="authors.html#citation">Citing nasa</a></li>
 </ul>
 </div>
 
