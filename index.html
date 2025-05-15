@@ -85,14 +85,15 @@
 <p>Accessing CDO data requires a token.</p>
 <p>Get a token by going to <a href="https://www.ncdc.noaa.gov/cdo-web/token" class="external-link">www.ncdc.noaa.gov/cdo-web/token</a> and entering your email address.</p>
 </div>
-<div class="section level2">
-<h2 id="get_climate_data">
-<code>get_climate_data()</code><a class="anchor" aria-label="anchor" href="#get_climate_data"></a>
-</h2>
-<p>The <code><a href="reference/get_climate_data.html">get_climate_data()</a></code> function allows you to retrieve climate and weather data from the <a href="https://www.ncdc.noaa.gov/cdo-web/webservices/v2#gettingStarted" class="external-link">NOAA Climate Data Online (CDO) API</a> for a wide range of dataset types. It supports pagination and can retrieve large numbers of records by iteratively querying the API.</p>
 <div class="section level3">
-<h3 id="function-overview">Function Overview<a class="anchor" aria-label="anchor" href="#function-overview"></a>
+<h3 id="functions">Functions<a class="anchor" aria-label="anchor" href="#functions"></a>
 </h3>
+</div>
+<div class="section level3">
+<h3 id="get_climate_data">
+<code>get_climate_data()</code><a class="anchor" aria-label="anchor" href="#get_climate_data"></a>
+</h3>
+<p>The <code><a href="reference/get_climate_data.html">get_climate_data()</a></code> function allows you to retrieve climate and weather data from the <a href="https://www.ncdc.noaa.gov/cdo-web/webservices/v2#gettingStarted" class="external-link">NOAA Climate Data Online (CDO) API</a> for a wide range of dataset types. It supports pagination and can retrieve large numbers of records by iteratively querying the API.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/get_climate_data.html">get_climate_data</a></span><span class="op">(</span><span class="va">noaa_token</span>, <span class="va">datasetid</span>, stationid <span class="op">=</span> <span class="cn">NULL</span>, locationid <span class="op">=</span> <span class="cn">NULL</span>, <span class="va">startdate</span>, <span class="va">enddate</span>, n_results <span class="op">=</span> <span class="cn">Inf</span><span class="op">)</span></span></code></pre></div>
 </div>
@@ -152,10 +153,7 @@
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section level3">
-<h3 id="supported-dataset-ids">Supported Dataset IDs<a class="anchor" aria-label="anchor" href="#supported-dataset-ids"></a>
-</h3>
+<p>Supported Dataset IDs:</p>
 <p>The function currently supports the following datasets:</p>
 <ul>
 <li>
@@ -194,10 +192,7 @@
 <li>
 <code>STORM_EVENTS</code> – Storm event data</li>
 </ul>
-</div>
-<div class="section level3">
-<h3 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
-</h3>
+<p>Example:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Example: Get daily precipitation for Central Park, NY in January 2020</span></span>
 <span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_climate_data.html">get_climate_data</a></span><span class="op">(</span></span>
@@ -209,15 +204,11 @@
 <span>  n_results <span class="op">=</span> <span class="fl">1000</span></span>
 <span><span class="op">)</span></span></code></pre></div>
 </div>
-</div>
-<div class="section level2">
-<h2 id="get_locationid">
-<code>get_locationid()</code><a class="anchor" aria-label="anchor" href="#get_locationid"></a>
-</h2>
-<p>The <code><a href="reference/get_locationid.html">get_locationid()</a></code> function retrieves location identifiers from the NOAA Climate Data Online (CDO) API based on a specified category. It supports pagination to return large sets of location data.</p>
 <div class="section level3">
-<h3 id="function-overview-1">Function Overview<a class="anchor" aria-label="anchor" href="#function-overview-1"></a>
+<h3 id="get_locationid">
+<code>get_locationid()</code><a class="anchor" aria-label="anchor" href="#get_locationid"></a>
 </h3>
+<p>The <code><a href="reference/get_locationid.html">get_locationid()</a></code> function retrieves location identifiers from the NOAA Climate Data Online (CDO) API based on a specified category. It supports pagination to return large sets of location data.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/get_locationid.html">get_locationid</a></span><span class="op">(</span><span class="va">noaa_token</span>, <span class="va">category_id</span>, n_results <span class="op">=</span> <span class="cn">Inf</span><span class="op">)</span></span></code></pre></div>
 </div>
@@ -253,10 +244,7 @@
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section level3">
-<h3 id="supported-location-category-ids">Supported Location Category IDs<a class="anchor" aria-label="anchor" href="#supported-location-category-ids"></a>
-</h3>
+<p>Supported Location Category IDs:</p>
 <p>The function supports the following location categories:</p>
 <ul>
 <li>
@@ -280,10 +268,7 @@
 <li>
 <code>FIPS</code> – Federal Information Processing Standards codes (e.g., <code>"FIPS:37"</code> for North Carolina)</li>
 </ul>
-</div>
-<div class="section level3">
-<h3 id="example-1">Example<a class="anchor" aria-label="anchor" href="#example-1"></a>
-</h3>
+<p>Example:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Example: Retrieve a list of U.S. states</span></span>
 <span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_locationid.html">get_locationid</a></span><span class="op">(</span></span>
@@ -291,21 +276,15 @@
 <span>  category_id <span class="op">=</span> <span class="st">"ST"</span>,</span>
 <span>  n_results <span class="op">=</span> <span class="fl">100</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-</div>
-<div class="section level3">
-<h3 id="returns">Returns<a class="anchor" aria-label="anchor" href="#returns"></a>
-</h3>
+<p>Returns:</p>
 <p>A data frame containing location metadata from the specified category. If no results are returned or the request fails, an error is thrown or an empty data frame is returned.</p>
 </div>
-</div>
-<div class="section level2">
-<h2 id="get_stationid">
-<code>get_stationid()</code><a class="anchor" aria-label="anchor" href="#get_stationid"></a>
-</h2>
-<p>The <code><a href="reference/get_stationid.html">get_stationid()</a></code> function retrieves weather station metadata from the NOAA Climate Data Online (CDO) API for a given dataset and time range. It supports pagination and can return a large number of station records.</p>
 <div class="section level3">
-<h3 id="function-overview-2">Function Overview<a class="anchor" aria-label="anchor" href="#function-overview-2"></a>
+<h3 id="get_stationid">
+<code>get_stationid()</code><a class="anchor" aria-label="anchor" href="#get_stationid"></a>
 </h3>
+<p>The <code><a href="reference/get_stationid.html">get_stationid()</a></code> function retrieves weather station metadata from the NOAA Climate Data Online (CDO) API for a given dataset and time range. It supports pagination and can return a large number of station records.</p>
+<p>Function Overview:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/get_stationid.html">get_stationid</a></span><span class="op">(</span><span class="va">noaa_token</span>, <span class="va">datasetid</span>, locationid <span class="op">=</span> <span class="cn">NULL</span>, <span class="va">startdate</span>, <span class="va">enddate</span>, n_results <span class="op">=</span> <span class="cn">Inf</span><span class="op">)</span></span></code></pre></div>
 </div>
@@ -358,10 +337,7 @@
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section level3">
-<h3 id="example-2">Example<a class="anchor" aria-label="anchor" href="#example-2"></a>
-</h3>
+<p>Example:</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Example: Get stations in Texas for the GHCND dataset during 2020</span></span>
 <span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_stationid.html">get_stationid</a></span><span class="op">(</span></span>
@@ -372,13 +348,9 @@
 <span>  enddate <span class="op">=</span> <span class="st">"2020-12-31"</span>,</span>
 <span>  n_results <span class="op">=</span> <span class="fl">1000</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-</div>
-<div class="section level3">
-<h3 id="returns-1">Returns<a class="anchor" aria-label="anchor" href="#returns-1"></a>
-</h3>
+<p>Returns:</p>
 <p>A data frame containing weather station metadata, such as station IDs, names, geographic coordinates, and available coverage. If no results are returned or the request fails, an error is thrown or an empty data frame is returned.</p>
 <p>A detailed list of NOAA acronyms can be found here: <a href="https://www1.ncdc.noaa.gov/pub/data/ghcn/daily/readme.txt" class="external-link uri">https://www1.ncdc.noaa.gov/pub/data/ghcn/daily/readme.txt</a></p>
-</div>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="links">
