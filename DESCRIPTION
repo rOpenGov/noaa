@@ -1,4 +1,4 @@
-Package: nasa
+Package: noaa
 Type: Package
 Title: Access National Aeronautics and Space Administration (NASA) Open APIs for Space and Earth Data
 Version: 1.0.0
@@ -21,3 +21,4 @@ Imports:
     dplyr
 RoxygenNote: 7.3.2
 URL: https://api.nasa.gov, https://eonet.gsfc.nasa.gov, https://cmr.earthdata.nasa.gov
+
