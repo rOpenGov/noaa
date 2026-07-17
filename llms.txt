@@ -56,20 +56,21 @@ for a wide range of dataset types. It supports pagination and can
 retrieve large numbers of records by iteratively querying the API.
 
 ``` r
+
 get_climate_data(noaa_token, datasetid, stationid = NULL, locationid = NULL, startdate, enddate, n_results = Inf)
 ```
 
 ### Arguments
 
-| Argument     | Type               | Description                                                                                           |
-|--------------|--------------------|-------------------------------------------------------------------------------------------------------|
-| `noaa_token` | `string`           | Your NOAA API token, available by registering at [NOAA CDO](https://www.ncdc.noaa.gov/cdo-web/token). |
-| `datasetid`  | `string`           | The dataset identifier. Must be one of the valid NOAA dataset IDs (see below).                        |
-| `stationid`  | `string` or `NULL` | The station ID (e.g., `"USW00094728"`). Required for station-based datasets.                          |
-| `locationid` | `string` or `NULL` | The location ID (e.g., `"FIPS:48"` for Texas). Required for location-based datasets.                  |
-| `startdate`  | `string`           | Start date for the query in `"YYYY-MM-DD"` format.                                                    |
-| `enddate`    | `string`           | End date for the query in `"YYYY-MM-DD"` format.                                                      |
-| `n_results`  | `numeric`          | Maximum number of results to return. Use `Inf` (default) to fetch all available records.              |
+| Argument | Type | Description |
+|----|----|----|
+| `noaa_token` | `string` | Your NOAA API token, available by registering at [NOAA CDO](https://www.ncdc.noaa.gov/cdo-web/token). |
+| `datasetid` | `string` | The dataset identifier. Must be one of the valid NOAA dataset IDs (see below). |
+| `stationid` | `string` or `NULL` | The station ID (e.g., `"USW00094728"`). Required for station-based datasets. |
+| `locationid` | `string` or `NULL` | The location ID (e.g., `"FIPS:48"` for Texas). Required for location-based datasets. |
+| `startdate` | `string` | Start date for the query in `"YYYY-MM-DD"` format. |
+| `enddate` | `string` | End date for the query in `"YYYY-MM-DD"` format. |
+| `n_results` | `numeric` | Maximum number of results to return. Use `Inf` (default) to fetch all available records. |
 
 Supported Dataset IDs:
 
@@ -91,6 +92,7 @@ The function currently supports the following datasets:
 Example:
 
 ``` r
+
 # Example: Get daily precipitation for Central Park, NY in January 2020
 df <- get_climate_data(
   noaa_token = "YOUR_API_KEY",
@@ -111,16 +113,17 @@ Online (CDO) API based on a specified category. It supports pagination
 to return large sets of location data.
 
 ``` r
+
 get_locationid(noaa_token, category_id, n_results = Inf)
 ```
 
 ### Arguments
 
-| Argument      | Type      | Description                                                                                 |
-|---------------|-----------|---------------------------------------------------------------------------------------------|
-| `noaa_token`  | `string`  | NOAA API token used for authentication.                                                     |
-| `category_id` | `string`  | The location category identifier. Must be one of the valid location categories (see below). |
-| `n_results`   | `numeric` | Maximum number of results to retrieve. Defaults to `Inf` to fetch all available records.    |
+| Argument | Type | Description |
+|----|----|----|
+| `noaa_token` | `string` | NOAA API token used for authentication. |
+| `category_id` | `string` | The location category identifier. Must be one of the valid location categories (see below). |
+| `n_results` | `numeric` | Maximum number of results to retrieve. Defaults to `Inf` to fetch all available records. |
 
 Supported Location Category IDs:
 
@@ -139,6 +142,7 @@ The function supports the following location categories:
 Example:
 
 ``` r
+
 # Example: Retrieve a list of U.S. states
 df <- get_locationid(
   noaa_token = "YOUR_API_KEY",
@@ -164,23 +168,25 @@ pagination and can return a large number of station records.
 Function Overview:
 
 ``` r
+
 get_stationid(noaa_token, datasetid, locationid = NULL, startdate, enddate, n_results = Inf)
 ```
 
 ### Arguments
 
-| Argument     | Type               | Description                                                                                    |
-|--------------|--------------------|------------------------------------------------------------------------------------------------|
-| `noaa_token` | `string`           | NOAA API token used for authentication.                                                        |
-| `datasetid`  | `string`           | The dataset identifier. Must be one of the valid dataset IDs (see list used by `valid_ids()`). |
-| `locationid` | `string` or `NULL` | Optional location identifier to filter stations geographically (e.g., `"FIPS:48"` for Texas).  |
-| `startdate`  | `string`           | Start date in `"YYYY-MM-DD"` format.                                                           |
-| `enddate`    | `string`           | End date in `"YYYY-MM-DD"` format.                                                             |
-| `n_results`  | `numeric`          | Maximum number of station records to retrieve. Defaults to `Inf` to fetch all.                 |
+| Argument | Type | Description |
+|----|----|----|
+| `noaa_token` | `string` | NOAA API token used for authentication. |
+| `datasetid` | `string` | The dataset identifier. Must be one of the valid dataset IDs (see list used by `valid_ids()`). |
+| `locationid` | `string` or `NULL` | Optional location identifier to filter stations geographically (e.g., `"FIPS:48"` for Texas). |
+| `startdate` | `string` | Start date in `"YYYY-MM-DD"` format. |
+| `enddate` | `string` | End date in `"YYYY-MM-DD"` format. |
+| `n_results` | `numeric` | Maximum number of station records to retrieve. Defaults to `Inf` to fetch all. |
 
 Example:
 
 ``` r
+
 # Example: Get stations in Texas for the GHCND dataset during 2020
 df <- get_stationid(
   noaa_token = "YOUR_API_KEY",
